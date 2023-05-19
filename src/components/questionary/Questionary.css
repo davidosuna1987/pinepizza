@@ -1,0 +1,12 @@
+@tailwind components;
+
+@layer components {
+  .pine-button {
+    @apply text-5xl mr-3 border-white border-opacity-25 border-2 rounded-md py-3 pl-6 pr-5 hover:bg-white hover:bg-opacity-5 cursor-pointer mb-3;
+  }
+}
+
+.questionaryContainer {
+  width: 95vw;
+  max-width: 400px;
+}
