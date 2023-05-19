@@ -1,24 +1,16 @@
 import { auth } from '@/config/firebase'
+import {
+  FirebaseLoginRegisterResponse,
+  FirebaseLogoutResponse,
+} from '@/domain/firebase/auth'
 import { FirebaseError } from 'firebase/app'
 import {
   GoogleAuthProvider,
-  UserCredential,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
-  updateProfile,
 } from 'firebase/auth'
-
-export type FirebaseLoginRegisterResponse = {
-  result: UserCredential | null
-  error: FirebaseError | null
-}
-
-export type FirebaseLogoutResponse = {
-  result: void | null
-  error: FirebaseError | null
-}
 
 export const register = async (
   email: string,

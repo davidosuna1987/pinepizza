@@ -1,4 +1,9 @@
 import { firebaseApp } from '@/config/firebase'
+import {
+  FirestoreAddDataResponse,
+  FirestoreFetchDataResponse,
+  FirestoreGetDataResponse,
+} from '@/domain/firebase/api'
 import { FirebaseError } from 'firebase/app'
 import {
   getFirestore,
@@ -7,25 +12,7 @@ import {
   setDoc,
   getDoc,
   getDocs,
-  DocumentSnapshot,
-  DocumentData,
-  QuerySnapshot,
 } from 'firebase/firestore'
-
-export type FirestoreAddDataResponse = {
-  success: boolean
-  error: FirebaseError | null
-}
-
-export type FirestoreGetDataResponse = {
-  result: DocumentSnapshot<DocumentData> | null
-  error: FirebaseError | null
-}
-
-export type FirestoreFetchDataResponse = {
-  result: QuerySnapshot<DocumentData> | null
-  error: FirebaseError | null
-}
 
 const db = getFirestore(firebaseApp)
 
